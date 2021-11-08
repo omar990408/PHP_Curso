@@ -1,35 +1,35 @@
 <?php
 //SWITCH
 $dia = 7;
-switch ($dia){
+switch ($dia) {
     case 1:
         echo 'Es lunes';
-    break;
+        break;
     case 2:
         echo 'Es martes';
-    break;
+        break;
     case 3:
         echo 'Es miercoles';
-    break;
+        break;
     case 4:
         echo 'Es jueves';
-    break;
+        break;
     case 5:
         echo 'Es viernes';
-    break;
+        break;
     default:
-    echo ' Es finde xd';    
-    
-    echo '<br>';    
-    //GOTO
-    goto marca;
-    echo "<h1>Instruccion 1</h1>";
-    echo "<h1>Instruccion 2</h1>";
-    echo "<h1>Instruccion 3</h1>";
-    echo "<h1>Instruccion 4</h1>";
-    
-    marca:
-    echo 'PARKOUR XD';
+        echo ' Es finde xd';
+
+        echo '<br>';
+        //GOTO -> Se salta xd
+        goto marca;
+        echo "<h1>Instruccion 1</h1>";
+        echo "<h1>Instruccion 2</h1>";
+        echo "<h1>Instruccion 3</h1>";
+        echo "<h1>Instruccion 4</h1>";
+
+        marca:
+        echo 'PARKOUR XD';
 
 
 }
