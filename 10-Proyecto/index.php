@@ -4,53 +4,24 @@
 <!--CAJA PRINCIPAL-->
 <div id="principal">
     <h1>Ultimas Entradas</h1>
-    <article class="entrada">
-        <a href="">
-            <h2>Titulo de mi entrada</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis debitis delectus dicta
-                dignissimos
-                dolore eius, eveniet excepturi ipsa ipsum magni minima molestias natus optio quasi quia similique
-                suscipit velit vitae!
-            </p>
-        </a>
-    </article>
 
-    <article class="entrada">
-        <a href="">
-            <h2>Titulo de mi entrada</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis debitis delectus dicta
-                dignissimos
-                dolore eius, eveniet excepturi ipsa ipsum magni minima molestias natus optio quasi quia similique
-                suscipit velit vitae!
-            </p>
-        </a>
-    </article>
+    <?php
+    $entradas = conseguirUltimasEntradas($db);
+    if (!empty($entradas)):
+        while ($entrada = mysqli_fetch_assoc($entradas)):
+            ?>
+            <article class="entrada">
+                <a href="">
+                    <h2><?= $entrada['titulo'] ?></h2>
+                    <span class="fecha"><?= $entrada['categoria'].' | '.$entrada['fecha']?></span>
+                    <p><?= $entrada['descripcion'] ?></p>
+                </a>
+            </article>
+        <?php
+        endwhile;
+    endif;
+    ?>
 
-    <article class="entrada">
-        <a href="">
-            <h2>Titulo de mi entrada</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis debitis delectus dicta
-                dignissimos
-                dolore eius, eveniet excepturi ipsa ipsum magni minima molestias natus optio quasi quia similique
-                suscipit velit vitae!
-            </p>
-        </a>
-    </article>
-
-    <article class="entrada">
-        <a href="">
-            <h2>Titulo de mi entrada</h2>
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis debitis delectus dicta
-                dignissimos
-                dolore eius, eveniet excepturi ipsa ipsum magni minima molestias natus optio quasi quia similique
-                suscipit velit vitae!
-            </p>
-        </a>
-    </article>
     <div id="ver-todas">
         <a href="">Ver todas las entradas</a>
     </div>
