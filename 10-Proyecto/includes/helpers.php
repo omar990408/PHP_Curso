@@ -19,6 +19,10 @@ function borrarErrores()
         $_SESSION['completado'] = null;
         unset($_SESSION['completado']);
     }
+    if (isset($_SESSION['errores_entrada'])) {
+        $_SESSION['errores_entrada'] = null;
+        unset($_SESSION['errores_entrada']);
+    }
 }
 
 function conseguirCategorias($conexion)

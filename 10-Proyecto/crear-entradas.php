@@ -9,13 +9,17 @@
     <form action="guardar-entrada.php" method="post">
         <label for="titulo">Titulo</label>
         <input type="text" name="titulo" id="">
+        <?php echo isset($_SESSION['errores_entrada']) ? mostrarError($_SESSION['errores_entrada'], 'titulo') : ''; ?>
 
         <label for="descripcion">Descripción</label>
         <textarea name="descripcion" id="" cols="30" rows="10"></textarea>
+        <?php echo isset($_SESSION['errores_entrada']) ? mostrarError($_SESSION['errores_entrada'], 'descripcion') : ''; ?>
 
 
         <label for="categoria">Categoria</label>
         <select name="categoria" id="">
+            <?php echo isset($_SESSION['errores_entrada']) ? mostrarError($_SESSION['errores_entrada'], 'categoria') : ''; ?>
+
             <?php
             $categorias = conseguirCategorias($db);
             if (!empty($categorias)):
@@ -34,6 +38,7 @@
 
         <input type="submit" value="Guardar">
     </form>
+    <?php borrarErrores();?>
 
 </div>
 
