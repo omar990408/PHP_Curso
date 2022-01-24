@@ -20,10 +20,15 @@ if (!isset($entrada_actual['id'])) {
     </a>
 
 
-    <h4><?= $entrada_actual['fecha'] ?></h4>
+    <h4><?= $entrada_actual['fecha'] ?> | <?= $entrada_actual['usuario'] ?> </h4>
     <p>
         <?= $entrada_actual['descripcion'] ?>
     </p>
+
+    <?php if(isset($_SESSION["usuario"]) && $_SESSION['usuario']['id'] == $entrada_actual['usuario_id']): ?>
+        <a class="boton boton-verde" href="editar-entrada.php?id=<?= $entrada_actual['id'] ?>">Editar Entradas</a>
+        <a class="boton" href="borrar-entrada.php?id=<?= $entrada_actual['id'] ?>">Eliminar Entradas</a>
+    <?php   endif;?>
 
 
 </div>
