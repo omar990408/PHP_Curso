@@ -67,4 +67,4 @@ if (isset($_POST)) {
     }
 
 }
-header('Location: index.php');
+header('Location: index_maqueta.php');

@@ -34,5 +34,5 @@ if (isset($_POST)) {
 
 }
 
-// Redirigir al index.php
-header('Location: index.php');
+// Redirigir al index_maqueta.php
+header('Location: index_maqueta.php');

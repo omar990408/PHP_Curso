@@ -33,7 +33,7 @@ if(!empty($_POST['nombre']) && !empty($_POST['apellido']) &&
     $error = 'faltan valores';
 }
 if($error != 'ok'){
-    header("Location:index.php?error=$error");
+    header("Location:index_maqueta.php?error=$error");
 }
 ?>
 <!doctype html>

@@ -28,7 +28,7 @@ class NotaController{
 
 //        echo $nota->db->error;
 //        die();
-        header("Location: index.php?action=listar&controller=Nota");
+        header("Location: index_maqueta.php?action=listar&controller=Nota");
 
     }
     public function borrar(){

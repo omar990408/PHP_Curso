@@ -35,7 +35,7 @@ if(isset($_POST)) {
         }
 
         $guardar = mysqli_query($db,$sql);
-        header('Location: index.php');
+        header('Location: index_maqueta.php');
     }else{
         $_SESSION['errores_entrada'] = $errores;
         if(isset($_GET['editar'])){
