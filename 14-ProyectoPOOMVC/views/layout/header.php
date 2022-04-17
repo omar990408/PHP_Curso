@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tiendilla Los H Killers</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="<?=base_url?>assets/css/style.css">
 </head>
 
 <body>
@@ -14,8 +14,8 @@
     <!-- CABECERA -->
     <header id="header">
         <div id="logo">
-            <img src="assets/img/camiseta.png" alt="Camiseta Logo">
-            <a href="index_maqueta.php">
+            <img src="<?=base_url?>assets/img/camiseta.png" alt="Camiseta Logo">
+            <a href="<?=base_url?>">
                 Tiendilla Los H Killers
             </a>
         </div>
