@@ -14,6 +14,10 @@ a{
     color: #01B1EA;
 }
 
+.btn-registro{
+ text-decoration: none;
+}
+
 a:visited{
     color: #01B1EA;
 }
