@@ -1,6 +1,6 @@
 <?php
 if(!isset($_POST['busqueda'])){
-    header("Location: index_maqueta.php");
+    header("Location: index.php");
 }
 ?>
 
