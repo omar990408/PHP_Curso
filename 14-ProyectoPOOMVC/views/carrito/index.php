@@ -7,6 +7,7 @@
         <th>Unidades</th>
         <th>Eliminar</th>
     </tr>
+<!--    --><?php //var_dump($carrito); ?>
     <?php foreach ($carrito as $indice => $elemento): ?>
         <?php $producto = $elemento['producto']; ?>
         <tr>

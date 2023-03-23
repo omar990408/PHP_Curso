@@ -9,7 +9,6 @@
             <li><a href="<?=base_url?>Carrito/index">Productos (<?=$stats['count']?>)</a></li>
             <li><a href="<?=base_url?>Carrito/index">Total: $<?=$stats['total']?></a></li>
             <li><a href="<?=base_url?>Carrito/index">Ver el carrito</a></li>
-            <li> <a href="<?=base_url?>Carrito/index">Ver el carrito</a> </li>
         </ul>
     </div>
 
@@ -34,11 +33,11 @@
             <?php if (isset($_SESSION['admin'])): ?>
                 <li><a href="<?=base_url?>Categoria/index">Gestionar categorias</a></li>
                 <li><a href="<?=base_url?>Producto/gestion">Gestionar productos</a></li>
-                <li><a href="#">Gestionar pedidos</a></li>
+                <li><a href="<?=base_url?>Pedido/gestion">Gestionar pedidos</a></li>
             <?php endif; ?>
 
             <?php if(isset($_SESSION['identity'])):?>
-                <li><a href="#">Mis pedidos</a></li>
+                <li><a href="<?=base_url?>Pedido/mis_pedidos">Mis pedidos</a></li>
                 <li><a href="<?=base_url?>Usuario/logout">Cerrar Sesión</a></li>
             <?php endif; ?>
         </ul>
