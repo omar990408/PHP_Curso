@@ -2,7 +2,11 @@
 require_once "models/Producto.php";
 class CarritoController{
     public function index(){
-        $carrito = ($_SESSION['carrito']);
+        if(isset($_SESSION['carrito']) && count($_SESSION['carrito']) >= 1){
+            $carrito = ($_SESSION['carrito']);
+        }else{
+            $carrito = array();
+        }
 //        var_dump($carrito);
         require_once "views/carrito/index.php";
     }

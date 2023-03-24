@@ -226,4 +226,14 @@ class Pedido
         return $pedido;
     }
 
+    public function edit(){
+        $sql = "UPDATE pedidos SET estado = '{$this->getEstado()}' WHERE id = {$this->getId()}";
+        $update = $this->db->query($sql);
+        $result = false;
+        if($update){
+            $result = true;
+        }
+        return $result;
+    }
+
 }

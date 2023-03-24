@@ -40,9 +40,9 @@ class PedidoController
             } else {
                 $_SESSION['pedido'] = "failed";
             }
-            header("Location:".base_url."Pedido/confirmado");
-        }else{
-            header("Location:".base_url);
+            header("Location:" . base_url . "Pedido/confirmado");
+        } else {
+            header("Location:" . base_url);
         }
     }
 
@@ -67,6 +67,48 @@ class PedidoController
         $pedido->setUsuarioId($usuario_id);
         $pedidos = $pedido->getAllByUser();
         require_once "views/pedido/mis_pedidos.php";
+    }
+
+    public function detalle()
+    {
+        Utils::isIdentity();
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            // Sacar el pedido
+            $pedido = new Pedido();
+            $pedido->setId($id);
+            $pedido = $pedido->getOne();
+            // Sacar los productos
+            $pedido_productos = new Pedido();
+            $productos = $pedido_productos->getProductosByPedido($id);
+            require_once "views/pedido/detalle.php";
+        }
+    }
+
+    public function gestion()
+    {
+        Utils::isAdmin();
+        $gestion = true;
+        $pedido = new Pedido();
+        $pedidos = $pedido->getAll();
+        require_once "views/pedido/mis_pedidos.php";
+    }
+
+    public function estado(){
+        Utils::isAdmin();
+        if(isset($_POST['pedido_id']) && isset($_POST['estado'])){
+            // Recoger datos del formulario
+            $id = $_POST['pedido_id'];
+            $estado = $_POST['estado'];
+            // Update del pedido
+            $pedido = new Pedido();
+            $pedido->setId($id);
+            $pedido->setEstado($estado);
+            $pedido->edit();
+            header("Location:".base_url."Pedido/detalle&id=".$id);
+        }else{
+            header("Location:".base_url);
+        }
     }
 }
 
